@@ -9,7 +9,7 @@ class MemoriesController < ApplicationController
     @memory = Memory.new(memory_params)
     if @memory.save
       flash[:notice] = "Memory has been successfully added"
-      redirect_to memories_show(@memory)
+      redirect_to memories_path(@memory)
     else
       render 'new'
     end
