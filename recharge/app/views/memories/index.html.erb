@@ -1,0 +1,21 @@
+<h1>Listing all articles</h1>
+
+<%= link_to 'Go back', make_memory_path %>
+<%= link_to 'Record a memory', new_memory_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% @memory.each do |memory| %>
+  <tr>
+    <td><%= memory.title %></td>
+    <td><%= memory.description %></td>
+    <td><%= link_to 'Edit', edit_memory_path(memory) %></td>
+    <td><%= link_to 'Show', memory_path(memory) %></td>
+    <td><%= link_to 'Delete', memory_path(memory), method: :delete,
+	    data: {confirm: "This will permanently delete the memory. Are you sure?"} %></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,6 +1,5 @@
 <h1>Record a memory</h1>
 
-<%= link_to 'Go back', make_memory_path %>
 <%= form_for @memory do |f| %>
   <p>
     <%= f.label :title  %>

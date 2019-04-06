@@ -1,0 +1,13 @@
+
+<h1>Selected memory</h1>
+
+<p>
+  Title: <%= @memory.title %>
+</p>
+<p>
+  Description: <%= @memory.description %>
+</p>
+<p>
+  <%= link_to 'Edit memory', edit_memory_path(@memory) %>
+</p>
+

@@ -1,0 +1,23 @@
+
+<% if @memory.errors.any? %>
+
+  <h2>The following errors prevented the memory from being saved:</h2>
+  <ul>
+    <% @memory.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @memory do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description%>
+  </p>
+<% end %>
+  
+<%= link_to 'Go Back', memories_path %>
