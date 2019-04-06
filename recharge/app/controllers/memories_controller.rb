@@ -1,5 +1,11 @@
 class MemoriesController < ApplicationController
+  
+  def index
+  end
 
+  def make_memory
+  end
+  
   def new
     @memories = Memory.new
   end
