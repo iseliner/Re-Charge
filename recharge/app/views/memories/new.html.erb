@@ -1,3 +1,24 @@
-<h1>memoryrecharge.</h1>
-<p>Welcome to recharge! Let us recharge our batteries with happy memories!</p>
-<%= link_to 'Make memory', make_memory_path %>
+<h1>Record a memory</h1>
+
+<%= form_for @memory do |f| %>
+  <p>
+    <%= f.label :title  %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description  %>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+<% if @memory.errors.any? %>
+  <h2>The following errors prevent the article from saving:</h2>
+  <ul>
+    <% @memory.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
