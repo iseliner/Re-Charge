@@ -1,6 +1,9 @@
-<h1>Edit memory</h1>
+<%= button_to "home"%>
+<%= button_to "view memories" memories_path%>
+<h1 class="main_title">edit memory.</h1>
 
-<% if @article.errors.any? %>
+
+<% if @memory.errors.any? %>
   <h2>The following errors prevented the memory from being saved:</h2>
   <ul>
     <% @memory.errors.full_messages.each do |msg|%>
@@ -9,16 +12,18 @@
   </ul>
 <% end %>
 
-<%= form_for @memory do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="main_content">
+  <%= form_for @memory do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.submit, id: 'save_button', "save memory" %>
+    </p>
+  <% end %>
+</div>

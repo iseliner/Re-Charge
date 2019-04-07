@@ -1,26 +1,28 @@
-<h1>Listing all articles</h1>
+<div class="navbar">
+  <%= button_to "home", root_path, class: "nav_button", method: :get %>
+  <%= button_to "memory collection", make_memory_path, class: "nav_button", method: :get %>
+  <%= button_to "record a memory", new_memory_path, class: "nav_button", method: :get %>
+</div>
 
-<%= link_to 'Go back', make_memory_path %>
-<%= link_to 'Record a memory', new_memory_path %>
+<h1 class="main_title">your memories.</h1>
 
-<%= form_tag("/search", method: gets ) do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= submit_tag("Search") %>
-<% end %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-  <% @memory.each do |memory| %>
-  <tr>
-    <td><%= memory.title %></td>
-    <td><%= memory.description %></td>
-    <td><%= link_to 'Edit', edit_memory_path(memory) %></td>
-    <td><%= link_to 'Show', memory_path(memory) %></td>
-    <td><%= link_to 'Delete', memory_path(memory), method: :delete,
-	    data: {confirm: "This will permanently delete the memory. Are you sure?"} %></td>
-  </tr>
-  <% end %>
-</table>
+<div class="main_content">
+  <table>
+    <div class="memory_block">
+      <% @memory.each do |memory| %>
+        <tr>
+          <td><%= memory.title %></td>
+        </tr>
+        <tr>
+          <td><%= memory.description %></td>
+        </tr>
+        <tr class="align_element">
+          <td><%= button_to 'edit', edit_memory_path(memory), class: "redirect_button", method: :get %></td>
+          <td><%= button_to 'show', memory_path(memory), class: "redirect_button", method: :get %></td>
+          <td><%= button_to 'delete', memory_path(memory), class: "delete_button", method: :delete,
+	    data: {confirm: "This will permanently delete this memory. Continue?"} %></td>
+        </tr>
+	<% end %>
+    </div>
+  </table>
+</div>

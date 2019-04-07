@@ -65,6 +65,10 @@ table {
     padding: 10px;
 }
 
+.content_block {
+    width: 200px;
+}
+
 .memory_title {
     style: bold;
 }

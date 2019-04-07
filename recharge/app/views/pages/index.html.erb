@@ -1,3 +1,14 @@
-<h1>recharge.</h1>
-<p>Welcome to recharge! Let us recharge our batteries with happy memories!</p>
-<%= link_to "Let's get started", make_memory_path %>
+<div class="navbar">
+  <%= button_to "home", root_path, class: "nav-button", method: :get %>
+  <%= button_to "memory collection", memories_path, class: "nav-button", method: :get %>
+  <%= button_to "record a memory", new_memory_path, class: "nav-button", method: :get %>
+</div>
+  
+<h1 class="main_title">recharge.</h1>
+
+<div class="main_content">
+  <center>
+    <p>Welcome to recharge! <br> Let us recharge our batteries with happy memories!<br><br>
+      <%= button_to "Let's get started", new_memory_path, method: :get %></p>
+  </center>
+</div>
