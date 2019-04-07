@@ -1,7 +1,7 @@
 <div class="navbar">
   <%= button_to "home", root_path, class: "nav_button", method: :get %>
-  <%= button_to "memory collection", class: "nav_button", memories_path, method: :get %>
-  <%= button_to "record a memory", class: "nav-button", new_memory_path, method: :get %>
+  <%= button_to "memory collection", memories_path, class: "nav_button", method: :get %>
+  <%= button_to "record a memory", new_memory_path, class: "nav_button", method: :get %>
 </div>
 
 <h1 class="main_title">record your memory.</h1>
@@ -25,11 +25,15 @@
   <% end %>
 </div>
 
-<% if @memory.errors.any? %>
-  <h4>The following errors prevented the memory from being recorded:</h4>
-  <ul>
-    <% @memory.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<center>
+  <div class="error_box">
+    <% if @memory.errors.any? %>
+      <h4>The following errors prevented the memory from being recorded:</h4>
+      <ul>
+        <% @memory.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <% end %>
+  </div>
+</center>

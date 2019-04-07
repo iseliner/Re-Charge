@@ -1,6 +1,6 @@
 <div class="navbar">
   <%= button_to "home", root_path, class: "nav_button", method: :get %>
-  <%= button_to "memory collection", make_memory_path, class: "nav_button", method: :get %>
+  <%= button_to "memory collection", memories_path, class: "nav_button", method: :get %>
   <%= button_to "record a memory", new_memory_path, class: "nav_button", method: :get %>
 </div>
 
@@ -9,12 +9,12 @@
 <div class="main_content">
   <table>
     <div class="memory_block">
-      <% @memory.each do |memory| %>
+      <% @memory.reverse_each do |memory| %>
         <tr>
-          <td><%= memory.title %></td>
+          <td class="memory_title, content_block"><%= memory.title %></td>
         </tr>
         <tr>
-          <td><%= memory.description %></td>
+          <td class="content_block"><%= memory.description %></td>
         </tr>
         <tr class="align_element">
           <td><%= button_to 'edit', edit_memory_path(memory), class: "redirect_button", method: :get %></td>

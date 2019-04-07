@@ -10,11 +10,11 @@
   <%= form_for @memory do |f| %>
     <p>
       <%= f.label :title %><br>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: "text_field" %>
     </p>
     <p>
       <%= f.label :description %><br>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, class: "text_area" %>
     </p>
     <center>
       <p>
@@ -25,11 +25,15 @@
   <% end %>
 </div>
 
-<% if @memory.errors.any? %>
-  <h4>The following errors prevented the memory from being recorded:</h4>
-  <ul>
-    <% @memory.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<center>
+  <div class="error_box">
+    <% if @memory.errors.any? %>
+      <h4>The following errors prevented the memory from being recorded:</h4>
+      <ul>
+        <% @memory.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <% end %>
+  </div>
+</center>

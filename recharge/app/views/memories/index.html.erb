@@ -11,18 +11,28 @@
     <div class="memory_block">
       <% @memory.reverse_each do |memory| %>
         <tr>
-          <td class="memory_title, content_block"><%= memory.title %></td>
+	  <td>
+            <div class="memory_title"><%= memory.title %></div>
+	  </td>
         </tr>
         <tr>
-          <td class="content_block"><%= memory.description %></td>
+	  <td>
+            <div class="content_block"><%= memory.description %></div>
+	  </td>
         </tr>
-        <tr class="align_element">
-          <td><%= button_to 'edit', edit_memory_path(memory), class: "redirect_button", method: :get %></td>
-          <td><%= button_to 'show', memory_path(memory), class: "redirect_button", method: :get %></td>
-          <td><%= button_to 'delete', memory_path(memory), class: "delete_button", method: :delete,
-	    data: {confirm: "This will permanently delete this memory. Continue?"} %></td>
-        </tr>
-	<% end %>
+        <tr>
+	  <td>
+            <div class="align_element">
+              <p>
+	        <%= button_to 'edit', edit_memory_path(memory), class: "redirect_button", method: :get %>
+                <%= button_to 'show', memory_path(memory), class: "redirect_button", method: :get %>
+                <%= button_to 'delete', memory_path(memory), class: "delete_button", method: :delete,
+	                  data: {confirm: "This will permanently delete this memory. Continue?"} %>
+              </p>
+	    </div>
+	  </td>
+	</tr>
+      <% end %>
     </div>
   </table>
 </div>
