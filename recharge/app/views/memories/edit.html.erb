@@ -24,11 +24,16 @@
   <% end %>
 </div>
 
-<% if @memory.errors.any? %>
-  <h4>The following errors prevented the memory from being saved:</h4>
-  <ul>
-    <% @memory.errors.full_messages.each do |msg|%>
-    <l1><%= msg %></l1>
+<center>
+  <div class="error_box">
+    <% if @memory.errors.any? %>
+      <h4>The following errors prevented the memory from being saved:</h4>
+      <ul>
+        <% @memory.errors.full_messages.each do |msg|%>
+          <l1><%= msg %></l1>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+</center>
+
