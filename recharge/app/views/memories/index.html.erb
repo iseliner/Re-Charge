@@ -4,35 +4,34 @@
   <%= button_to "record a memory", new_memory_path, class: "nav_button", method: :get %>
 </div>
 
-<h1 class="main_title">your memories.</h1>
+<div class="center_page">
+  <h1 class="main_title">your memories.</h1>
 
-<div class="main_content">
-  <table>
-    <div class="memory_block">
+  <div class="main_content memory_content">
+    <table>
       <% @memory.reverse_each do |memory| %>
-        <tr>
-	  <td>
-            <div class="memory_title"><%= memory.title %></div>
-	  </td>
-        </tr>
-        <tr>
-	  <td>
-            <div class="content_block"><%= memory.description %></div>
-	  </td>
-        </tr>
-        <tr>
-	  <td>
-            <div class="align_element">
-              <p>
-	        <%= button_to 'edit', edit_memory_path(memory), class: "redirect_button", method: :get %>
-                <%= button_to 'show', memory_path(memory), class: "redirect_button", method: :get %>
-                <%= button_to 'delete', memory_path(memory), class: "delete_button", method: :delete,
-	                  data: {confirm: "This will permanently delete this memory. Continue?"} %>
-              </p>
-	    </div>
-	  </td>
-	</tr>
+          <tr>
+	    <td>
+              <div class="memory_title"><%= memory.title %></div>
+	    </td>
+          </tr>
+          <tr>
+	    <td>
+              <div class="content_block"><%= memory.description %></div>
+	    </td>
+          </tr>
+          <tr>
+	    <td>
+              <div class="align_element">
+	         <%= button_to 'edit', edit_memory_path(memory), class: "redirect_button", method: :get %>
+                 <%= button_to 'show', memory_path(memory), class: "redirect_button", method: :get %>
+                 <%= button_to 'delete', memory_path(memory), class: "delete_button", method: :delete,
+	             data: {confirm: "This will permanently delete this memory. Continue?"} %>
+	      </div>
+	    </td>
+	  </tr>
       <% end %>
-    </div>
-  </table>
+    </table>
+  </div>
 </div>
+

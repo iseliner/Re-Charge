@@ -1,28 +1,31 @@
 <div class="navbar">
-  <%= button_to "home", root_path, method: :get %>
-  <%= button_to "memory collection", memories_path, method: :get%>
-  <%= button_to "record a memory", new_memory_path, method: :get %>
+  <%= button_to "home", root_path, class: "nav_button", method: :get %>
+  <%= button_to "memory collection", memories_path, class: "nav_button", method: :get%>
+  <%= button_to "record a memory", new_memory_path, class: "nav_button", method: :get %>
 </div>
 
-<h1 class="main_title">edit memory.</h1>
+<div class="center_page">
+  <h1 class="main_title">edit memory.</h1>
 
-<div class="main_content">
-  <%= form_for @memory do |f| %>
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title, class: "title_field" %>
-    </p>
-    <p>
-      <%= f.label :description %><br>
-      <%= f.text_area :description, class: "text_area" %>
-    </p>
-    <center>
+  <div class="main_content">
+    <%= form_for @memory do |f| %>
       <p>
-        <%= f.submit "update memory", class: "submit_button" %>
+        <%= f.label :title %><br>
+        <%= f.text_field :title, class: "title_field" %>
       </p>
-    </center>
-  <% end %>
+      <p>
+        <%= f.label :description %><br>
+        <%= f.text_area :description, class: "text_area" %>
+      </p>
+      <center>
+        <p>
+          <%= f.submit "update memory", class: "submit_button" %>
+        </p>
+      </center>
+    <% end %>
+  </div>
 </div>
+
 
 <center>
   <div class="error_box">

@@ -14,4 +14,11 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-(document).ready(function(){$("body").hide().fadeIn(1000);});
+var main_content = document.getElementsByClassName("main_content");
+var main_title = document.getElementsByClassName("main_title");
+
+window.onload = function(){
+    console.log("hello, I am working!");
+}
+
+

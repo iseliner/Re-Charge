@@ -4,31 +4,39 @@
   <%= button_to "record a memory", new_memory_path, method: :get %>
 </div>
 
-<h1 class="main_title">edit memory.</h1>
+<div class="center_page">
+  <h1 class="main_title">edit memory.</h1>
 
-<div class="main_content">
-  <%= form_for @memory do |f| %>
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title, class: "title_field" %>
-    </p>
-    <p>
-      <%= f.label :description %><br>
-      <%= f.text_area :description, class: "text_area" %>
-    </p>
-    <center>
+  <div class="main_content">
+    <%= form_for @memory do |f| %>
       <p>
-        <%= f.submit "update memory", class: "submit_button" %>
+        <%= f.label :title %><br>
+        <%= f.text_field :title, class: "title_field" %>
       </p>
-    </center>
-  <% end %>
+      <p>
+        <%= f.label :description %><br>
+        <%= f.text_area :description, class: "text_area" %>
+      </p>
+      <center>
+        <p>
+          <%= f.submit "update memory", class: "submit_button" %>
+        </p>
+      </center>
+    <% end %>
+  </div>
 </div>
 
-<% if @memory.errors.any? %>
-  <h4>The following errors prevented the memory from being saved:</h4>
-  <ul>
-    <% @memory.errors.full_messages.each do |msg|%>
-    <l1><%= msg %></l1>
+
+<center>
+  <div class="error_box">
+    <% if @memory.errors.any? %>
+      <h4>The following errors prevented the memory from being saved:</h4>
+      <ul>
+        <% @memory.errors.full_messages.each do |msg|%>
+          <l1><%= msg %></l1>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+</center>
+

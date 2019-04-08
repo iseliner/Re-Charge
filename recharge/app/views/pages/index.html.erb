@@ -1,14 +1,17 @@
 <div class="navbar">
-  <%= button_to "home", root_path, class: "nav-button", method: :get %>
-  <%= button_to "memory collection", memories_path, class: "nav-button", method: :get %>
-  <%= button_to "record a memory", new_memory_path, class: "nav-button", method: :get %>
+  <%= button_to "home", root_path, class: "nav_button", method: :get %>
+  <%= button_to "memory collection", memories_path, class: "nav_button", method: :get %>
+  <%= button_to "record a memory", new_memory_path, class: "nav_button", method: :get %>
 </div>
-  
-<h1 class="main_title">recharge.</h1>
 
-<div class="main_content">
-  <center>
-    <p>Welcome to recharge! <br> Let us recharge our batteries with happy memories!<br><br>
-      <%= button_to "Let's get started", new_memory_path, method: :get %></p>
-  </center>
+<div class="center_page">
+  <h1 class="main_title">recharge.</h1>
+
+  <div class="main_content">
+    <center>
+      <p>Welcome to recharge! <br> Let us recharge our batteries with happy memories!<br><br>
+        <%= button_to "Let's go", new_memory_path, class: "redirect_button", method: :get %></p>
+    </center>
+  </div>
 </div>
+

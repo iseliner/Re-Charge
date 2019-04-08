@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-h1, h2, h3, h4, tr, th, td, p {
+h1, h2, h3, h4, tr, th, td, p, flash_msg, error_box {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -21,15 +21,24 @@ li {
     list-style-type: none;
 }
 .error_box {
-    font-style: #ff4c4c;
+    color: #ff4c4c;
+}
+
+.flash_msg {
+    color: #85CC85;
+    padding-top: 100px;
+    padding-left: 25px;
+    margin-right: auto;
+    position: absolute;
+    align-content: center
 }
 
 .main_title {
     color: #605C5C;
-    margin-top: 10%;
+    margin-top: 15%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,17 +49,29 @@ li {
 }
 
 .memory_title {
-    style: bold;
+    font-weight: bold;
+}
+
+.center_page {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    overflow: hidden;
 }
 
 .main_content {
     height: 400px;
+    width: 700px;
     padding-top: 30px;
     margin-left: auto;
     margin-right: auto;
     align-items: baseline;
     display: flex;
     justify-content: center;
+}
+
+.memory_content {
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -61,22 +82,27 @@ table {
 .navbar {
     padding-left: 20px;
     padding-top: 30px;
-    position: relative;
+    position: absolute;
     align: left;
 }
 
 .memory_block {
+    font-family: Arial;
     border: 1px;
-    margin: 5px;
-    padding: 10px;
+    border-style: solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .content_block {
-    width: 400px;
+    width: 550px;
     overflow: auto;
+    padding-top: 2px;
+    padding-bottom: 1px;
 }
 
 .memory_title {
+    font-family: Arial;
     font-style: bold;
 }
 
@@ -90,14 +116,10 @@ table {
     background-color: #b6b6b6;
 }
 
-.submit_button {
-    border: none;
-    width: 90px;
-}
-
 .delete_button {
     border: none;
-    width: 90px;
+    margin-right: 3px;
+    width: 120px;
     color: #fff;
     background-color: #ef7465;
 }
@@ -119,6 +141,7 @@ table {
 
 .redirect_button {
     border: none;
+    margin-right: 3px;
     width: 90px;
 }
 .redirect_button:hover {
@@ -135,6 +158,7 @@ table {
 }
 
 .align_element {
-    display: inline-block;
-    align: left;
+    display: flex;
+    margin-bottom: 20px;
+    align: right;
 }
