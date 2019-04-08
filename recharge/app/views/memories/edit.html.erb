@@ -10,11 +10,15 @@
   <div class="main_content">
     <%= form_for @memory do |f| %>
       <p>
-        <%= f.label :title %><br>
+        <%= f.label :title %>
+      </p>
+      <p>
         <%= f.text_field :title, class: "title_field" %>
       </p>
       <p>
-        <%= f.label :description %><br>
+        <%= f.label :description %>
+      </p>
+      <p>
         <%= f.text_area :description, class: "text_area" %>
       </p>
       <center>

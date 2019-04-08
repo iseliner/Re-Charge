@@ -1,7 +1,7 @@
 <div class="navbar">
-  <%= button_to "home", root_path, method: :get %>
-  <%= button_to "memory collection", memories_path, method: :get%>
-  <%= button_to "record a memory", new_memory_path, method: :get %>
+  <%= button_to "home", root_path, class: "nav_button", method: :get %>
+  <%= button_to "memory collection", memories_path, class: "nav_button", method: :get%>
+  <%= button_to "record a memory", new_memory_path, class: "nav_button", method: :get %>
 </div>
 
 <div class="center_page">

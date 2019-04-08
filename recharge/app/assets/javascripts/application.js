@@ -20,5 +20,3 @@ var main_title = document.getElementsByClassName("main_title");
 window.onload = function(){
     console.log("hello, I am working!");
 }
-
-

@@ -13,20 +13,25 @@
  *= require_tree .
  *= require_self
  */
-h1, h2, h3, h4, tr, th, td, p, flash_msg, error_box {
+h1, h2, h3, h4, tr, th, td, p, li, ul, label, flash_msg, error_box {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    margin: 16px 0px -8px 0px;
 }
 
 li {
     list-style-type: none;
 }
 .error_box {
-    color: #ff4c4c;
+    width: 700px;
+    color: #EF7465;
 }
 
 .flash_msg {
-    color: #85CC85;
-    padding-top: 100px;
+    color: #A7A7A7;
+    padding-top: 120px;
     padding-left: 25px;
     margin-right: auto;
     position: absolute;
@@ -38,7 +43,7 @@ li {
     margin-top: 15%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,6 +51,7 @@ li {
 
 .main_title:hover {
     color: #A4C6E0;
+    transition: all .7s ease;
 }
 
 .memory_title {
@@ -110,10 +116,11 @@ table {
     border: none;
     margin: 2px;
     width: 150px;
-    padding: 2px 3px 2px 3px;
+    padding: 5px 3px 5px 3px;
 }
 .nav_button:hover{
     background-color: #b6b6b6;
+    transition: all .5s ease;
 }
 
 .delete_button {
@@ -125,7 +132,8 @@ table {
 }
 
 .delete_button:hover {
-    background-color: #d7685a;
+    background-color: #ea4a37;
+    transition: all .5s ease;
 }
 
 .submit_button {
@@ -137,15 +145,17 @@ table {
 
 .submit_button:hover {
     background-color: #77b777;
+    transition: all .5s ease;
 }
 
 .redirect_button {
     border: none;
     margin-right: 3px;
-    width: 90px;
+    width: 120px;
 }
 .redirect_button:hover {
     background-color: #b6b6b6;
+    transition: all .5s ease;
 }
 
 .text_area {
